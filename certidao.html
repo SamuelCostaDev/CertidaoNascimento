@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/certidao.css">
+    <script src="public/js/pdf/certidao.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="cabecalhoCertidao">
+            <h3>REPÚBLICA FEDERATICA DO BRASIL</h3>
+            <img src="public/img/image.png" alt="">
+            <h3>PODER JUDICÍARIO</h3>
+        </div>
+    </section>
+
+    <section>
+        <div class="paragrafo1Certidao">
+            <p>CARTÓRIO <span class="nomeCartorio"></span></p>
+            <p><span class="oficialCartorio"></span> - Oficial, <span class="tabelia"></span> - Tabeliã</p>
+            <p>Ofício de Notas, Protestos, Registro de imóveis, Registro de Pessoas Júridicas e Civil.</p>
+            <p>Registro de Títulos e Documentos, Protestos de <span class="municipios"></span>/<span class="estados"></span></p>
+            <p><span class="rua"></span>, <span class="numero"></span>, <span class="bairro"></span>, <span class="municipios"></span>/<span class="estados"></span></p>
+        </div>
+    </section>
+
+    <section>
+        <div class="tituloCertidao">
+            <h2>CERTIDÃO DE NASCIMENTO</h2>
+        </div>
+        <div class="paragrafo2Certidao">
+            <p>Certifico que sob o nº 0928 da folha 122 do Livro A - 003, de Registro de Nascimentos, consta que aos <span class="diaNascimento"></span> dias do mês de <span class="mesNascimento"></span> do ano de <span class="anoNascimento"></span> (<span class="dataCompletaNascimento"></span>), em <span class="municipioCrianca"></span> - <span class="estadosCrianca"></span>, ás <span class="horaNascimento"></span>, nasceu uma criança do sexo <span class="sexo"></span> de nome: <b><span class="nomeCrianca"></span></b></p>
+        </div>
+        <div class="pais" id="ComPai" hidden>
+            <p><b>Filho de <span class="nomePai"></span> e de <span class="nomeMae"></span>.</b></p>
+        </div>
+        <div class="pais" id="SemPai" hidden>
+            <p><b>Filho de <span class="nomeMae"></span>.</b></p>
+        </div>
+        <div class="avos" id="SemNomeAvoHP" hidden>
+            <p>Sendo Avó Paterna: <span class="NomeAvoMP"></span> e Avós Maternos: <span class="NomeAvoHM"></span> e <span class="NomeAvoMM"></span>.</p>
+        </div>
+        <div class="avos" id="SemNomeAvoH" hidden>
+            <p>Sendo Avó Paterna: <span class="NomeAvoMP"></span> e Avó Materna: <span class="NomeAvoMM"></span>.</p>
+        </div>
+        <div class="avos" id="SemNomeAvoHM" hidden>
+            <p>Sendo Avós Paterna: <span class="NomeAvoMP"></span> e <span class="NomeAvoHP"></span> e Avó Materna: <span class="NomeAvoMM"></span>.</p>
+        </div>
+        <div class="avos" id="ComNomeAvos" hidden>
+            <p>Sendo Avós Paternos: <span class="NomeAvoMP"></span> e <span class="NomeAvoHP"></span> e Avós Maternos: <span class="NomeAvoHM"></span> e <span class="NomeAvoMM"></span>.</p>
+        </div>
+        <div class="testemunhas" hidden>
+            <p>Serviram como testemunhas: <span class="testemunha1"></span> e <span class="testemunha2"></span>, maiores residentes e domicialiados em <span class="municipioT"></span> - <span class="estadosT"></span></p>
+        </div>
+        <div class="obs">
+            <p><b>Observações:</b> O Pai do menor foi o declarante, resgistro entregue na data infra. Dou Fé.</p>
+            <p class="referido"><b>O Referido é Verdade, Dou Fé.</b></p>
+        </div>
+        <div class="final">
+            <p><span class="municipios"></span>, <span class="diaDocumento"></span> de <span class="mesDocumento"></span> de <span class="anoDocumento"></span>.</p> 
+            <p class="linha">_____________________________</p>
+            <p><span class="oficialCartorio"></span>, <span class="tabelia"></span></p>
+        </div>
+    </section>
+
+    <script>
+        window.print()
+        window.onafterprint = function() {
+            window.history.back()
+        }
+    </script>
+</body>
+</html>

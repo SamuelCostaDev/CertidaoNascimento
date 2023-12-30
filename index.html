@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="public/js/estados/estados.js"></script>
+    <script src="public/js/pdf/pdf.js"></script>
+    <script src="public/js/form/index.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Certidão de nascimento</title>
+</head>
+<body>
+   <header></header>
+   <main>
+        <div class="inicio">
+            <h1>Certidão de Nascimento</h1>
+        </div>
+        <section class="inicio">
+            <p>Aqui você pode retirar a certidão de nascimento do seu filho de forma gratuita e online.</p>
+        </section>
+        <section>
+            <div> 
+                <form action="" id="certidaoForm">
+                    <fieldset>
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="background">
+                                    <h3>Localizção do Cartório de Registro</h3>
+                                </div>
+                                <div class="col-sm-2 background">
+                                    <label for="estados">Estado:</label>
+                                    <select class="form-select" name="estados" id="estados">
+                                        <option value="">Selecione uma opção</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-2 background">
+                                    <label for="municipios">Município:</label>
+                                    <select class="form-select" name="municipios" id="municipios">
+                                        <option value="">Selecione uma opção</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-2 background">
+                                    <label for="Endereço">Endereço:</label>
+                                    <input class="form-control form-control-sm" id="rua" type="text" placeholder="Ex.: Rua Travessa dona Viturina">
+                                </div>
+                                <div class="col-sm-2 background">
+                                    <label for="Número">Número:</label>
+                                    <input class="form-control form-control-sm" id="numero" type="text" placeholder="Ex.: 02">
+                                    <input type="checkbox" id="semNumero" onclick="sn()">
+                                    <label for="SemNumero">S/N</label>
+                                </div>
+                                <div class="col-sm-2 background">
+                                    <label for="Bairro">Bairro:</label>
+                                    <input class="form-control form-control-sm" id="bairro" type="text" placeholder="Ex.: Centro">
+                                </div>
+                                <div class="col-sm-2 background">
+                                    <label for="cartorio">Cartório:</label>
+                                    <input class="form-control form-control-sm"  type="text" id="nomeCartorio" placeholder="Escreva o nome do Cartório"> 
+                                </div>
+                            </div>
+                            <div class="row div2 align-items-center">
+                                <div class="background">
+                                    <h3>Outras Informações do Cartório</h3>
+                                </div>
+                                <div class="col-sm-2 background">
+                                    <label for="municipios">Oficial:</label>
+                                    <input class="form-control form-control-sm" type="text" id="oficialCartorio" placeholder="Escreva o nome do(a) Oficial">
+                                </div>
+                                <div class="col-sm-2 background">
+                                    <label for="cartorio">Tabeliã:</label>
+                                    <input class="form-control form-control-sm"  type="text" id="tabelia"placeholder="Escreva o nome da(o) Tabeliã"> 
+                                </div>
+                                <div class="col-sm-2 backgroundFor2">
+                                    <label for="dataNascimento">Data do Documento</label>
+                                    <input class="form-control form-control-sm" type="date" id="dataDocumento">
+                                </div> 
+                            </div>
+                            <div class="row div2 align-items-center">
+                                <div class="backgroundFor2">
+                                    <h3>Dados dados do Recém Nascido</h3>
+                                </div>
+                                <div class="col-sm-2 backgroundFor2">
+                                    <label for="nomeCrianca">Nome Completo da Criança</label>
+                                    <input class="form-control form-control-sm" type="text" id="nomeCrianca">
+                                </div>
+                                <div class="col-sm-2 backgroundFor2">
+                                    <label for="nomeMae">Nome Completo da Mãe</label>
+                                    <input class="form-control form-control-sm" type="text" id="nomeMae">
+                                </div>
+                                <div class="col-sm-2 backgroundFor2">
+                                    <label for="nomePai">Nome Completo do Pai (Opcional)</label>
+                                    <input class="form-control form-control-sm" type="text" id="nomePai">
+                                </div>
+                                <div class="col-sm-2 backgroundFor2">
+                                    <label for="dataNascimento">Data de Nascimento</label>
+                                    <input class="form-control form-control-sm" type="date" id="dataNascimento">
+                                </div>                            <div class="col-sm-2 background">
+                                    <label for="estados">Estado:</label>
+                                    <select class="form-select" name="estados" id="estadosCrianca">
+                                        <option value="">Selecione uma opção</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-2 background">
+                                    <label for="municipioCrianca">Múnicipio:</label>
+                                    <select class="form-select" name="municipios" id="municipioCrianca">
+                                        <option value="">Selecione uma opção</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-2 backgroundFor2">
+                                    <label for="dataNascimento">Horário do Nascimento</label>
+                                    <input class="form-control form-control-sm" type="text" id="horaNascimento" placeholder="Ex.: 12 horas">
+                                </div>
+                                <div class="col-sm-2 backgroundFor2">
+                                    <label for="sexoBebe">Sexo do Bebê</label>
+                                    <select class="form-select" name="estados" id="sexo">
+                                        <option value="">Selecione uma opção</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Feminino">Feminino</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row div2 align-items-center">
+                                <div class="background">
+                                    <h3>Avós</h3>
+                                </div>
+                                <div class="col-sm-2 backgroundFor2">
+                                    <label for="NomeAvóP">Nome Completo da Avó Paterna</label>
+                                    <input class="form-control form-control-sm" type="text" id="NomeAvoMP">
+                                </div>
+                                <div class="col-sm-2 backgroundFor2">
+                                    <label for="NomeAvôP">Nome Completo do Avô Paterno (Opcional)</label>
+                                    <input class="form-control form-control-sm" type="text" id="NomeAvoHP">
+                                </div>
+                                <div class="col-sm-2 backgroundFor2">
+                                    <label for="NomeAvóM">Nome Completo da Avó Materna</label>
+                                    <input class="form-control form-control-sm" type="text" id="NomeAvoMM">
+                                </div>
+                                <div class="col-sm-2 backgroundFor2">
+                                    <label for="NomeAvôM">Nome Completo do Avô Materno (Opcional)</label>
+                                    <input class="form-control form-control-sm" type="text" id="NomeAvoHM">
+                                </div>
+                                <div class="col-sm-2 backgroundFor2">
+                                    <label for="Testemunha">Teve Testemunha?</label><br>
+                                    <label for="sim">Sim</label>
+                                    <input type="radio" name="teveTestemunha" class="testemunha" id="sim" value="sim" onclick="mostrarTestemunhas()"><br>
+                                    <label for="nao">Não</label>
+                                    <input type="radio" name="teveTestemunha" class="testemunha" id="nao" value="nao" onclick="ocultarTestemunhas()">
+                                </div>                            
+                            </div>
+                            <div class="row div2 align-items-center" id="testemunhas" hidden>
+                                <div class="background">
+                                    <h3 id="dasdasd">Testemunhas</h3>
+                                </div>
+                                <div class="col-sm-2 background">
+                                    <label for="municipios">Testemunha 1</label>
+                                    <input class="form-control form-control-sm" type="text"
+                                    id="testemunha1" placeholder="Escreva o nome do(a) Testemunha">
+                                </div>
+                                <div class="col-sm-2 background" id="A">
+                                    <label for="cartorio">Testemunha 2</label>
+                                    <input class="form-control form-control-sm"  type="text" id="testemunha2" placeholder="Escreva o nome do(a) Testemunha"> 
+                                </div>
+                                <div class="col-sm-2 background">
+                                    <label for="estados">Estado:</label>
+                                    <select class="form-select" name="estados" id="estadosT">
+                                        <option value="">Selecione uma opção</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-2 background">
+                                    <label for="municipiosT">Múnicipio:</label>
+                                    <select class="form-select" name="municipios" id="municipioT">
+                                        <option value="">Selecione uma opção</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="button" onclick="salvarEEnviar()" class="btn btn-primary">Enviar</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                </form>
+                
+            </div>
+        </section>
+   </main>
+</body>
+</html>
