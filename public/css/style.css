@@ -4,9 +4,11 @@
 }
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgba(42, 46, 46, 0.918);
+    min-height: 100vh; /* Ensure body takes at least full height of viewport */
 }
 a {
     margin-top: 10px;
@@ -31,6 +33,10 @@ div {
 
 button {
     margin-top:  10px;
+}
+
+footer {
+    color: #ffff;
 }
 
 .background {

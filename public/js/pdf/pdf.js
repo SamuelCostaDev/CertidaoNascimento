@@ -1,7 +1,9 @@
 function salvarEEnviar() {
   // Obter o valor do input
   var estados = document.getElementById("estados").value;
+  var estadosCrianca = document.getElementById("estadosCrianca").value;
   var municipios = document.getElementById("municipios").value;
+  var municipioCrianca = document.getElementById("municipioCrianca").value;
   var rua = document.getElementById("rua").value;
   var numeroInput = document.getElementById("numero");
 
@@ -31,8 +33,10 @@ function salvarEEnviar() {
 
   // // Armazenar o valor em localStorage
   localStorage.setItem("estados", estados);
+  localStorage.setItem("estadosCrianca", estadosCrianca);
   localStorage.setItem("elementosTestemunha", valorSelecionado);
   localStorage.setItem("municipios", municipios);
+  localStorage.setItem("municipioCrianca", municipioCrianca);
   localStorage.setItem("rua", rua);
   localStorage.setItem("numero", numero);
   localStorage.setItem("bairro", bairro);

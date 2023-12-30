@@ -1,3 +1,7 @@
+* {
+    font-family: sans-serif;
+}
+
 img {
     width: 30vh;
 }
@@ -9,6 +13,11 @@ img {
 .paragrafo1Certidao {
     margin-top: 4rem;
     line-height: .30rem;
+}
+
+#oficiais {
+    line-height: 1.2rem;
+
 }
 
 .tituloCertidao {
